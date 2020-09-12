@@ -23,12 +23,12 @@ import {
 
 import axios from "axios";
 
-// const GenderTitle = ({ record }) => {
-//   return <span>Sintoma {record ? `"${record.name}"` : ""}</span>;
-// };
+const CategoryTitle = ({ record }) => {
+  return <span>Sintoma {record ? `"${record.name}"` : ""}</span>;
+};
 
-export const GenderList = (props) => (
-  <List {...props} title="Biblioteca">
+export const CategoryList = (props) => (
+  <List {...props} title="Categorias">
     <Datagrid rowClick="edit">
       <TextField source="title" label="Título" />
       <TextField source="description" label="Descripción" />
@@ -39,29 +39,29 @@ export const GenderList = (props) => (
   </List>
 );
 
-export const GenderCreate = (props) => (
-  <Create {...props} successMessage="Síntoma creado con éxito">
+export const CategoryCreate = (props) => (
+  <Create {...props} successMessage="Categoria creada">
     <SimpleForm redirect="show">
       <TextInput source="title" label="Título" />
       <TextInput source="description" label="Descripción" />
-      {/* <TextInput source="category_desc" label="Categoria" /> */}
     </SimpleForm>
   </Create>
 );
 
-export const GenderEdit = (props) => (
-  <Edit {...props} >
+export const CategoryEdit = (props) => (
+  <Edit {...props}>
     <SimpleForm redirect="show">
-      <TextInput label="Nombre" source="name" />
+      <TextInput source="title" label="Título" />
+      <TextInput source="description" label="Descripción" />
     </SimpleForm>
   </Edit>
 );
 
-export const GenderShow = (props) => (
-    <Show {...props}>
-        <SimpleShowLayout>
-            <TextField label="Título" source="title" />
-            <TextField label="Descripción" source="description" />
-        </SimpleShowLayout>
-    </Show>
+export const CategoryShow = (props) => (
+  <Show {...props}>
+    <SimpleShowLayout>
+      <TextField source="title" label="Título" />
+      <TextField source="description" label="Descripción" />
+    </SimpleShowLayout>
+  </Show>
 );
